@@ -25,13 +25,6 @@ struct SettingsView: View {
                                                                 set: { model.setStartEnabledOnLaunch($0) }))
             }
 
-            Section("Routing") {
-                Toggle("Follow Teams output automatically", isOn: .constant(true))
-                    .disabled(true)
-                Text("Processed audio always follows the device Teams is using. This cannot be changed in v1.")
-                    .font(.caption).foregroundStyle(.secondary)
-            }
-
             Section("De-essing") {
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {
@@ -43,7 +36,7 @@ struct SettingsView: View {
                     CommitSlider(value: Double(model.settings.strength), in: 0...1) {
                         model.setStrength(Float($0))
                     }
-                    Text("Uses the EasyEffects (Calf) de-esser. Higher values lower the detection threshold and raise the ratio, so more sibilance (sharp “s”/“sh” sounds) is tamed. The midpoint is the EasyEffects default; the top end is deliberately heavy.")
+                    Text("Higher values tame more sibilance (sharp “s”/“sh” sounds). The midpoint is a balanced default; the top end is deliberately heavy.")
                         .font(.caption).foregroundStyle(.secondary)
                 }
             }

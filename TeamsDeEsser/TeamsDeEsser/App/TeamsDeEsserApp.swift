@@ -8,8 +8,14 @@ struct TeamsDeEsserApp: App {
     @State private var model = AppModel()
 
     var body: some Scene {
-        MenuBarExtra("Teams De-Esser", systemImage: "waveform.badge.mic") {
+        MenuBarExtra {
             MenuBarView(model: model)
+        } label: {
+            // Plain waveform when idle; same waveform with a small check badge
+            // once processing is enabled, so the menu bar shows at a glance
+            // whether de-essing is active without changing the glyph's size.
+            Image(systemName: model.enabled ? "waveform.badge.checkmark" : "waveform")
+                .accessibilityLabel("Teams De-Esser")
         }
         .menuBarExtraStyle(.window)
 

@@ -3,6 +3,7 @@ import SwiftUI
 /// The menu-bar popover (spec §12.1).
 struct MenuBarView: View {
     @Bindable var model: AppModel
+    @Environment(\.openSettings) private var openSettings
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -14,6 +15,7 @@ struct MenuBarView: View {
             gainReductionMeter
             Divider()
             bypassRow
+            Divider()
             controlButtons
         }
         .padding(14)
@@ -87,40 +89,49 @@ struct MenuBarView: View {
     }
 
     private var bypassRow: some View {
-        Toggle(isOn: Binding(get: { model.bypass }, set: { model.setBypass($0) })) {
+        HStack {
             VStack(alignment: .leading, spacing: 1) {
-                Text("Bypass for comparison")
-                Text("Keeps capture active; DSP crossfades to unity")
+                Text("Bypass")
+                Text("Hear Teams unprocessed")
                     .font(.caption2).foregroundStyle(.secondary)
             }
+            Spacer()
+            Toggle("", isOn: Binding(get: { model.bypass }, set: { model.setBypass($0) }))
+                .labelsHidden()
+                .toggleStyle(.switch)
         }
-        .toggleStyle(.switch)
         .disabled(!model.enabled)
     }
 
     private var controlButtons: some View {
-        VStack(spacing: 6) {
+        HStack {
             Button {
-                model.requestManualRebuild()
+                openSettingsWindow()
             } label: {
-                Label("Rebuild audio path", systemImage: "arrow.clockwise")
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Label("Settings…", systemImage: "gearshape")
             }
-            .disabled(!model.enabled)
-
-            HStack {
-                SettingsLink {
-                    Label("Settings…", systemImage: "gearshape")
-                }
-                Spacer()
-                Button(role: .destructive) {
-                    NSApplication.shared.terminate(nil)
-                } label: {
-                    Label("Quit", systemImage: "power")
-                }
+            Spacer()
+            Button(role: .destructive) {
+                NSApplication.shared.terminate(nil)
+            } label: {
+                Label("Quit", systemImage: "power")
             }
         }
         .buttonStyle(.plain)
+    }
+
+    /// Opens the Settings window and brings it to the front. As an `LSUIElement`
+    /// accessory, the app is not active when the menu-bar popover is showing, so
+    /// `openSettings()` alone leaves the window behind other apps' windows —
+    /// `NSApp.activate` plus a forced order-front fixes the focus.
+    private func openSettingsWindow() {
+        NSApp.activate(ignoringOtherApps: true)
+        openSettings()
+        DispatchQueue.main.async {
+            NSApp.windows
+                .first { $0.identifier?.rawValue == "com_apple_SwiftUI_Settings_window" }?
+                .orderFrontRegardless()
+        }
     }
 
     private var statusColor: Color {
