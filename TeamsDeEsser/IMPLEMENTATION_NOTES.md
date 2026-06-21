@@ -127,12 +127,15 @@ reject `channels-in: 0`.
     Linked (averaged) stereo detection, the click-free bypass crossfade, and
     denormal/NaN safety are retained.
   - **UI/controls reduced to on/off + one slider.** Per the product direction the
-    only exposed control is **Aggressiveness** (`DeEsserSettings.aggressiveness`,
-    0…1): it interpolates threshold (−6…−30 dBFS) and ratio (1:1…6:1) together,
-    hitting the stock EasyEffects default (−18 dBFS, 3:1) at 0.5. Every other Calf
-    control is pinned to its EasyEffects default. The old Preset picker, Type
-    (Broadband/Notch) switch, Frequency / Threshold / Max-reduction / Sharpness
-    sliders and the Solo "listen to band" toggle were removed.
+    only exposed control is **Strength** (`DeEsserSettings.strength`, 0…1): a
+    piecewise map of threshold and ratio that eases from "off" up to the stock
+    EasyEffects default (−18 dBFS, 3:1) at the 0.5 midpoint, then ramps hard over
+    the upper half to −42 dBFS / 12:1 so the top of the slider is a deliberately
+    heavy de-ess. Every other Calf control is pinned to its EasyEffects default.
+    The old Preset picker, Type (Broadband/Notch) switch, Frequency / Threshold /
+    Max-reduction / Sharpness sliders and the Solo "listen to band" toggle were
+    removed. (The control was briefly named "Aggressiveness"; the persisted
+    settings decoder still accepts that legacy key.)
 
 - **Real-time path (§10.1):** the render body is a free C++ function
   (`TDRenderProcess`) operating on an opaque `RenderContext`; it never messages

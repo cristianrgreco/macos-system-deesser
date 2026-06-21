@@ -114,16 +114,17 @@ Click the menu-bar icon:
   untouched (no tap, no aggregate device).
 - **Status** — Disabled · Waiting for Teams · Permission required · Starting ·
   *Processing Teams → \<device\>* · Rebuilding · Error.
-- **Aggressiveness** — the single de-essing control. It scales the Calf
-  de-esser's detection threshold and ratio together (0 = gentle, 0.5 = the stock
-  EasyEffects default, 1 = aggressive). Everything else is pinned to the
+- **Strength** — the single de-essing control. It scales the Calf de-esser's
+  detection threshold and ratio together (0 = gentle, 0.5 = the stock EasyEffects
+  default, 1 = deliberately heavy — threshold −42 dBFS, ratio 12:1, for a very
+  obvious drop in harsh sibilance). Everything else is pinned to the
   EasyEffects/Calf defaults.
-- **Gain-reduction meter** — live, 0–12 dB.
+- **Gain-reduction meter** — live, 0–24 dB.
 - **Bypass for comparison** — keeps Teams captured and dry-muted but crossfades
   the de-esser to unity, for click-free A/B testing. (Different from the master
   switch, which removes the tap entirely.)
 - **Rebuild audio path** — manually tears down and rebuilds the graph.
-- **Settings…** — startup options, launch-at-login, the aggressiveness slider, and a
+- **Settings…** — startup options, launch-at-login, the strength slider, and a
   **Diagnostics** tab (detected processes, chosen device, object IDs, heartbeat,
   meters, last Core Audio error, and a *Copy diagnostic report* button —
   **metadata only, never audio**).

@@ -128,11 +128,11 @@ final class AppModel {
         }
     }
 
-    // MARK: - Aggressiveness
+    // MARK: - Strength
 
-    /// Sets how hard the de-esser works (0 = gentle … 1 = aggressive).
-    func setAggressiveness(_ value: Float) {
-        settings = DeEsserSettings(aggressiveness: value)
+    /// Sets how hard the de-esser works (0 = gentle … 1 = very heavy).
+    func setStrength(_ value: Float) {
+        settings = DeEsserSettings(strength: value)
         persistSettings()
         coordinator.updateSettings(settings)
     }

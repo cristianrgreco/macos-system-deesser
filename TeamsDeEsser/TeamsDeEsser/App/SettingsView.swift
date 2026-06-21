@@ -35,15 +35,15 @@ struct SettingsView: View {
             Section("De-essing") {
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {
-                        Text("Aggressiveness")
+                        Text("Strength")
                         Spacer()
-                        Text(String(format: "%.0f%%", model.settings.aggressiveness * 100))
+                        Text(String(format: "%.0f%%", model.settings.strength * 100))
                             .foregroundStyle(.secondary).monospacedDigit()
                     }
-                    CommitSlider(value: Double(model.settings.aggressiveness), in: 0...1) {
-                        model.setAggressiveness(Float($0))
+                    CommitSlider(value: Double(model.settings.strength), in: 0...1) {
+                        model.setStrength(Float($0))
                     }
-                    Text("Uses the EasyEffects (Calf) de-esser. Higher values lower the detection threshold and raise the ratio, so more sibilance (sharp “s”/“sh” sounds) is tamed.")
+                    Text("Uses the EasyEffects (Calf) de-esser. Higher values lower the detection threshold and raise the ratio, so more sibilance (sharp “s”/“sh” sounds) is tamed. The midpoint is the EasyEffects default; the top end is deliberately heavy.")
                         .font(.caption).foregroundStyle(.secondary)
                 }
             }

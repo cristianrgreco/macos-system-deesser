@@ -10,7 +10,7 @@ struct MenuBarView: View {
             Divider()
             statusRow
             Divider()
-            aggressivenessSection
+            strengthSection
             gainReductionMeter
             Divider()
             bypassRow
@@ -51,26 +51,26 @@ struct MenuBarView: View {
         }
     }
 
-    private var aggressivenessSection: some View {
+    private var strengthSection: some View {
         VStack(alignment: .leading, spacing: 2) {
             HStack {
-                Text("Aggressiveness").font(.caption).foregroundStyle(.secondary)
+                Text("Strength").font(.caption).foregroundStyle(.secondary)
                 Spacer()
-                Text(aggressivenessLabel).font(.caption).foregroundStyle(.secondary)
+                Text(strengthLabel).font(.caption).foregroundStyle(.secondary)
             }
-            CommitSlider(value: Double(model.settings.aggressiveness), in: 0...1) {
-                model.setAggressiveness(Float($0))
+            CommitSlider(value: Double(model.settings.strength), in: 0...1) {
+                model.setStrength(Float($0))
             }
         }
     }
 
-    private var aggressivenessLabel: String {
-        switch model.settings.aggressiveness {
+    private var strengthLabel: String {
+        switch model.settings.strength {
         case ..<0.2: return "Gentle"
         case ..<0.45: return "Light"
         case ..<0.55: return "Default"
         case ..<0.8: return "Strong"
-        default: return "Aggressive"
+        default: return "Max"
         }
     }
 
@@ -82,7 +82,7 @@ struct MenuBarView: View {
                 Text(String(format: "%.1f dB", model.diagnostics.gainReductionDb))
                     .font(.caption.monospacedDigit()).foregroundStyle(.secondary)
             }
-            GainReductionBar(valueDb: model.diagnostics.gainReductionDb, maxDb: 12)
+            GainReductionBar(valueDb: model.diagnostics.gainReductionDb, maxDb: 24)
         }
     }
 

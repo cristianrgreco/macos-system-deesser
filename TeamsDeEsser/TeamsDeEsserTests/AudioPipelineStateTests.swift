@@ -2,7 +2,7 @@ import XCTest
 @testable import TeamsDeEsser
 
 /// Tests for the value-type orchestration logic (state text, settings clamping,
-/// aggressiveness mapping). The live coordinator requires Core Audio hardware and
+/// strength mapping). The live coordinator requires Core Audio hardware and
 /// is exercised in the manual test matrix (spec §18).
 final class AudioPipelineStateTests: XCTestCase {
 
@@ -25,27 +25,35 @@ final class AudioPipelineStateTests: XCTestCase {
         XCTAssertEqual(ProcessingState.requestingPermission.statusText(outputDeviceName: nil), "Permission required")
     }
 
-    func testAggressivenessClampsToRange() {
-        XCTAssertEqual(DeEsserSettings(aggressiveness: 5).aggressiveness, 1.0)
-        XCTAssertEqual(DeEsserSettings(aggressiveness: -5).aggressiveness, 0.0)
+    func testStrengthClampsToRange() {
+        XCTAssertEqual(DeEsserSettings(strength: 5).strength, 1.0)
+        XCTAssertEqual(DeEsserSettings(strength: -5).strength, 0.0)
     }
 
     func testDefaultMatchesEasyEffectsDefaults() {
         // At 0.5 the derived Calf controls equal the stock EasyEffects defaults.
         let s = DeEsserSettings.standard
-        XCTAssertEqual(s.aggressiveness, 0.5, accuracy: 1e-6)
+        XCTAssertEqual(s.strength, 0.5, accuracy: 1e-6)
         XCTAssertEqual(s.thresholdDb, -18, accuracy: 1e-4)
         XCTAssertEqual(s.ratio, 3, accuracy: 1e-4)
     }
 
-    func testAggressivenessSweepsThresholdAndRatio() {
-        let gentle = DeEsserSettings(aggressiveness: 0)
+    func testStrengthSweepsThresholdAndRatio() {
+        let gentle = DeEsserSettings(strength: 0)
         XCTAssertEqual(gentle.thresholdDb, -6, accuracy: 1e-4)
-        XCTAssertEqual(gentle.ratio, 1, accuracy: 1e-4) // 3 + (-0.5)*6 = 0, clamped to 1
+        XCTAssertEqual(gentle.ratio, 1, accuracy: 1e-4)
 
-        let strong = DeEsserSettings(aggressiveness: 1)
-        XCTAssertEqual(strong.thresholdDb, -30, accuracy: 1e-4)
-        XCTAssertEqual(strong.ratio, 6, accuracy: 1e-4)
+        // The top end is deliberately heavy: low threshold, high ratio.
+        let strong = DeEsserSettings(strength: 1)
+        XCTAssertEqual(strong.thresholdDb, -42, accuracy: 1e-4)
+        XCTAssertEqual(strong.ratio, 12, accuracy: 1e-4)
+    }
+
+    func testLegacyAggressivenessKeyStillDecodes() throws {
+        // Settings persisted before the rename used the "aggressiveness" key.
+        let json = Data(#"{"aggressiveness":0.8}"#.utf8)
+        let decoded = try JSONDecoder().decode(DeEsserSettings.self, from: json)
+        XCTAssertEqual(decoded.strength, 0.8, accuracy: 1e-6)
     }
 
     func testRendererParamsUseEasyEffectsDefaults() {
@@ -61,10 +69,10 @@ final class AudioPipelineStateTests: XCTestCase {
     }
 
     func testSettingsRoundTripThroughCodable() throws {
-        let original = DeEsserSettings(aggressiveness: 0.73)
+        let original = DeEsserSettings(strength: 0.73)
         let data = try JSONEncoder().encode(original)
         let decoded = try JSONDecoder().decode(DeEsserSettings.self, from: data)
-        XCTAssertEqual(decoded.aggressiveness, 0.73, accuracy: 1e-6)
+        XCTAssertEqual(decoded.strength, 0.73, accuracy: 1e-6)
     }
 
     func testRebuildReasonDescriptions() {

@@ -5,9 +5,10 @@ import Foundation
 /// The processing is a faithful port of the Calf "Deesser" plugin — the de-esser
 /// EasyEffects uses for PipeWire/PulseAudio. Every Calf control is pinned to the
 /// EasyEffects/Calf default; the only thing the user adjusts is a single
-/// **Aggressiveness** value that scales how hard the de-esser works by moving the
-/// detection threshold and ratio together. At the default (0.5) the parameters
-/// equal the stock EasyEffects defaults exactly.
+/// **Strength** value that scales how hard the de-esser works by moving the
+/// detection threshold and ratio together. At the midpoint (0.5) the parameters
+/// equal the stock EasyEffects defaults exactly; the top of the range goes well
+/// past that into deliberately heavy de-essing.
 struct DeEsserSettings: Equatable, Codable {
 
     // MARK: Fixed Calf/EasyEffects defaults (the algorithm we replicate)
@@ -22,33 +23,51 @@ struct DeEsserSettings: Equatable, Codable {
     static let modeWide: Int32 = 0        // Wide mode
 
     // MARK: Adjustable
-    static let aggressivenessRange: ClosedRange<Float> = 0...1
+    static let strengthRange: ClosedRange<Float> = 0...1
 
-    /// 0 = barely de-essing, 0.5 = EasyEffects default, 1 = very aggressive.
-    var aggressiveness: Float
+    /// 0 = barely de-essing, 0.5 = EasyEffects default, 1 = very heavy de-essing.
+    var strength: Float
 
-    init(aggressiveness: Float = 0.5) {
-        self.aggressiveness = aggressiveness.clamped(to: Self.aggressivenessRange)
+    init(strength: Float = 0.5) {
+        self.strength = strength.clamped(to: Self.strengthRange)
     }
 
-    // Tolerate older/partial persisted payloads.
-    private enum CodingKeys: String, CodingKey { case aggressiveness }
+    // Decode the current key, falling back to the legacy "aggressiveness" key so
+    // settings persisted before the rename still load.
+    private enum CodingKeys: String, CodingKey { case strength }
+    private enum LegacyKeys: String, CodingKey { case aggressiveness }
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
-        self.init(aggressiveness: try c.decodeIfPresent(Float.self, forKey: .aggressiveness) ?? 0.5)
+        if let s = try c.decodeIfPresent(Float.self, forKey: .strength) {
+            self.init(strength: s)
+        } else {
+            let legacy = try decoder.container(keyedBy: LegacyKeys.self)
+            self.init(strength: try legacy.decodeIfPresent(Float.self, forKey: .aggressiveness) ?? 0.5)
+        }
     }
 
     /// The default ("EasyEffects") settings.
-    static var standard: DeEsserSettings { DeEsserSettings(aggressiveness: 0.5) }
+    static var standard: DeEsserSettings { DeEsserSettings(strength: 0.5) }
 
     // MARK: Derived Calf controls
-    // Threshold sweeps -6 dBFS (gentle) … -30 dBFS (aggressive), passing the
-    // EasyEffects default of -18 dBFS at 0.5. Ratio sweeps 1:1 … 6:1, passing the
-    // default 3:1 at 0.5. Everything else stays at the stock default.
+    // The lower half (0…0.5) eases in from "off" to the EasyEffects default; the
+    // upper half (0.5…1) ramps much harder so the slider's top end is a hammer —
+    // threshold drops to -42 dBFS and the ratio climbs to 12:1, which squashes the
+    // sibilant band by tens of dB for a very obvious drop in harsh "s"/"sh" sounds.
 
-    var thresholdDb: Float { -18 + (0.5 - aggressiveness) * 24 }
-    var ratio: Float { max(1, 3 + (aggressiveness - 0.5) * 6) }
+    var thresholdDb: Float {
+        strength <= 0.5
+            ? -18 + (0.5 - strength) * 24   // 0 → -6 dBFS, 0.5 → -18 dBFS
+            : -18 - (strength - 0.5) * 48    // 0.5 → -18 dBFS, 1 → -42 dBFS
+    }
+
+    var ratio: Float {
+        let r = strength <= 0.5
+            ? 1 + strength * 4               // 0 → 1:1 (off), 0.5 → 3:1
+            : 3 + (strength - 0.5) * 18      // 0.5 → 3:1, 1 → 12:1
+        return r.clamped(to: 1...20)
+    }
 
     /// Maps the settings to the C struct consumed by the real-time renderer.
     /// Bypass is supplied separately by the coordinator because it is a runtime
