@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Xcode user-specific state (the generated .xcodeproj itself is committed)
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+# Build products / derived data
+build/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Claude Code local (machine-specific) settings
+.claude/settings.local.json

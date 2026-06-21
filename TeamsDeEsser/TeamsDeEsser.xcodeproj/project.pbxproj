@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010D267A2A24FE0821FD16AB /* DiagnosticsSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDBD7AC02B942FF220D676F /* DiagnosticsSnapshot.swift */; };
+		0F4E7997320816C58F153F13 /* ProcessTapHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E2227110435538DBA4C5A /* ProcessTapHandle.swift */; };
+		2742880F630E17F1BF9B6D03 /* ProcessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68B128E3CC5B5574896F0E /* ProcessingState.swift */; };
+		2A7C1D12B10F44EF96750F83 /* PermissionExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF531E055F57A83714086DBB /* PermissionExplainerView.swift */; };
+		2CF3DF9241F2F3CA1EA33697 /* StreamFormatValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AD31737158ADD9AF420E4 /* StreamFormatValidator.swift */; };
+		36ED165362A29C3AA3B624EF /* CoreAudioError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3FA3B918DC2DCC5594794 /* CoreAudioError.swift */; };
+		43C8E6F08C8849BE1EF5D6B6 /* OutputDeviceResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05E06A3C6F7B4A8E95B31A6 /* OutputDeviceResolver.swift */; };
+		5F40A6FB6B32A5DD4F34EAF4 /* AggregateDeviceHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A35A4F35C3373C72451AC7 /* AggregateDeviceHandle.swift */; };
+		64BEA3D5D79B1F0873B9DA57 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8E3E95C9E4CDF8A59E6B1 /* AppModel.swift */; };
+		7F2B25A26A99B2BB10973A0B /* OSStatus+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = E713873B368264A668B3EDF8 /* OSStatus+Description.swift */; };
+		9C4094FF5F8628D4FB0DC74B /* AudioPipelineStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3506859C3AD36761B1F81 /* AudioPipelineStateTests.swift */; };
+		9D0D3043BA3AAEFFF2AF283B /* DeEsserDSPTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3489DFBC0B96DBDECD5E427 /* DeEsserDSPTests.mm */; };
+		A05B37BED430C31A46E44D75 /* DeEsserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8780CBD0EED757601E807A0 /* DeEsserSettings.swift */; };
+		A32EB8ADA42D229C4916154F /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FE2B7FA0400B858E8CB307 /* MenuBarView.swift */; };
+		A4603497569FD3359E883F09 /* CoreAudioProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAE28DBEA69C517B997D45 /* CoreAudioProperties.swift */; };
+		AB21590CC28691BC8416D4B5 /* AudioPipelineCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F9DFB8BC5574AB4D5C279 /* AudioPipelineCoordinator.swift */; };
+		CE35A9C75157BD8509620264 /* DeEsserDSP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C612AFD80988969EB80C7F /* DeEsserDSP.cpp */; };
+		D04E6C4EED52CC2E754342F4 /* TeamsDeEsserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B8ABEACE28EC6DC3EB954 /* TeamsDeEsserApp.swift */; };
+		D7B595F60E706B27C25915E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4515B2220CD1A5CBAF9B1AE /* SettingsView.swift */; };
+		E507832CC19401440ABECC7C /* DeEsserDSP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71C612AFD80988969EB80C7F /* DeEsserDSP.cpp */; };
+		E7A9ABF9AE83C52730AE1B20 /* TDRealtimeRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 040ED93B96BA6136B0E95586 /* TDRealtimeRenderer.mm */; };
+		E87A4C0EEC9B1D2032B3B6F6 /* TeamsProcessLocatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545ECC2149C4536A3F9F4901 /* TeamsProcessLocatorTests.swift */; };
+		F14B28EA509852B3F213C3EF /* Logger+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A92109FC16D610D48372B /* Logger+Categories.swift */; };
+		F8230220301A0792B9CA2DEB /* OutputDeviceResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACF4C6724840DF73A10E02 /* OutputDeviceResolverTests.swift */; };
+		FE059227DEC518ADDBDCBB55 /* TeamsProcessLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FCBC026CD4B06815798733 /* TeamsProcessLocator.swift */; };
+		FFA571D52788FD904E4C04A8 /* AudioEnvironmentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAD0379AF31E58ED1F38DE /* AudioEnvironmentMonitor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		141F25552630D7651E4701C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BDC81E14E817A0D724FF7C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBD458B6014E2E2742C9F928;
+			remoteInfo = TeamsDeEsser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		040ED93B96BA6136B0E95586 /* TDRealtimeRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TDRealtimeRenderer.mm; sourceTree = "<group>"; };
+		19576B21C457C365626B8342 /* TDRealtimeRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDRealtimeRenderer.h; sourceTree = "<group>"; };
+		1A2B8ABEACE28EC6DC3EB954 /* TeamsDeEsserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsDeEsserApp.swift; sourceTree = "<group>"; };
+		252D245444AFB286B938A97C /* AudioBufferView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioBufferView.hpp; sourceTree = "<group>"; };
+		27A35A4F35C3373C72451AC7 /* AggregateDeviceHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregateDeviceHandle.swift; sourceTree = "<group>"; };
+		539E2227110435538DBA4C5A /* ProcessTapHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTapHandle.swift; sourceTree = "<group>"; };
+		53FCBC026CD4B06815798733 /* TeamsProcessLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsProcessLocator.swift; sourceTree = "<group>"; };
+		545ECC2149C4536A3F9F4901 /* TeamsProcessLocatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsProcessLocatorTests.swift; sourceTree = "<group>"; };
+		5AC3FA3B918DC2DCC5594794 /* CoreAudioError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAudioError.swift; sourceTree = "<group>"; };
+		5D0A92109FC16D610D48372B /* Logger+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Categories.swift"; sourceTree = "<group>"; };
+		5DF3355AB574B97F353B8B7F /* TeamsDeEsser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TeamsDeEsser-Bridging-Header.h"; sourceTree = "<group>"; };
+		683ED431A5339EFA90F073FD /* TeamsDeEsserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamsDeEsserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A68B128E3CC5B5574896F0E /* ProcessingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingState.swift; sourceTree = "<group>"; };
+		71C612AFD80988969EB80C7F /* DeEsserDSP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DeEsserDSP.cpp; sourceTree = "<group>"; };
+		78FE2B7FA0400B858E8CB307 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		93FAD0379AF31E58ED1F38DE /* AudioEnvironmentMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEnvironmentMonitor.swift; sourceTree = "<group>"; };
+		AC0AD31737158ADD9AF420E4 /* StreamFormatValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamFormatValidator.swift; sourceTree = "<group>"; };
+		B6ACF4C6724840DF73A10E02 /* OutputDeviceResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputDeviceResolverTests.swift; sourceTree = "<group>"; };
+		B8780CBD0EED757601E807A0 /* DeEsserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeEsserSettings.swift; sourceTree = "<group>"; };
+		BEF8E3E95C9E4CDF8A59E6B1 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		C43F9DFB8BC5574AB4D5C279 /* AudioPipelineCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPipelineCoordinator.swift; sourceTree = "<group>"; };
+		CF531E055F57A83714086DBB /* PermissionExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionExplainerView.swift; sourceTree = "<group>"; };
+		D05E06A3C6F7B4A8E95B31A6 /* OutputDeviceResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputDeviceResolver.swift; sourceTree = "<group>"; };
+		E048CEE77228291F00CBB07C /* Biquad.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Biquad.hpp; sourceTree = "<group>"; };
+		E1A3506859C3AD36761B1F81 /* AudioPipelineStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPipelineStateTests.swift; sourceTree = "<group>"; };
+		E47C5CED0134ABDA7E669553 /* DeEsserDSP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DeEsserDSP.hpp; sourceTree = "<group>"; };
+		E713873B368264A668B3EDF8 /* OSStatus+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSStatus+Description.swift"; sourceTree = "<group>"; };
+		F3489DFBC0B96DBDECD5E427 /* DeEsserDSPTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DeEsserDSPTests.mm; sourceTree = "<group>"; };
+		F4515B2220CD1A5CBAF9B1AE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FABAE28DBEA69C517B997D45 /* CoreAudioProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAudioProperties.swift; sourceTree = "<group>"; };
+		FFDBD7AC02B942FF220D676F /* DiagnosticsSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsSnapshot.swift; sourceTree = "<group>"; };
+		FFF2EAE63BBE539215D1005B /* TeamsDeEsser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamsDeEsser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		017985F693CA39CE8CEF2787 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFF2EAE63BBE539215D1005B /* TeamsDeEsser.app */,
+				683ED431A5339EFA90F073FD /* TeamsDeEsserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		157890B8E13F99CA24F02D22 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5D0A92109FC16D610D48372B /* Logger+Categories.swift */,
+				E713873B368264A668B3EDF8 /* OSStatus+Description.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		3CA7A3F2B93DA64CA68D7BDF /* TeamsDeEsser */ = {
+			isa = PBXGroup;
+			children = (
+				D884097762ACC82E55C9C2ED /* App */,
+				E73C25059C6EB7F3A07D3751 /* Audio */,
+				C7AD6B964DB4C1627700B2C3 /* Discovery */,
+				7739F14A384C637471E24BD2 /* Models */,
+				FE057A242FFEA14F08DE6389 /* Realtime */,
+				157890B8E13F99CA24F02D22 /* Support */,
+				5DF3355AB574B97F353B8B7F /* TeamsDeEsser-Bridging-Header.h */,
+			);
+			path = TeamsDeEsser;
+			sourceTree = "<group>";
+		};
+		6AED674EDC758AEA8A19D9E4 = {
+			isa = PBXGroup;
+			children = (
+				3CA7A3F2B93DA64CA68D7BDF /* TeamsDeEsser */,
+				8C2CEEC25412E196212D8A5A /* TeamsDeEsserTests */,
+				017985F693CA39CE8CEF2787 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7739F14A384C637471E24BD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B8780CBD0EED757601E807A0 /* DeEsserSettings.swift */,
+				FFDBD7AC02B942FF220D676F /* DiagnosticsSnapshot.swift */,
+				6A68B128E3CC5B5574896F0E /* ProcessingState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8C2CEEC25412E196212D8A5A /* TeamsDeEsserTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1A3506859C3AD36761B1F81 /* AudioPipelineStateTests.swift */,
+				F3489DFBC0B96DBDECD5E427 /* DeEsserDSPTests.mm */,
+				B6ACF4C6724840DF73A10E02 /* OutputDeviceResolverTests.swift */,
+				545ECC2149C4536A3F9F4901 /* TeamsProcessLocatorTests.swift */,
+			);
+			path = TeamsDeEsserTests;
+			sourceTree = "<group>";
+		};
+		C7AD6B964DB4C1627700B2C3 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				93FAD0379AF31E58ED1F38DE /* AudioEnvironmentMonitor.swift */,
+				D05E06A3C6F7B4A8E95B31A6 /* OutputDeviceResolver.swift */,
+				53FCBC026CD4B06815798733 /* TeamsProcessLocator.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		D884097762ACC82E55C9C2ED /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BEF8E3E95C9E4CDF8A59E6B1 /* AppModel.swift */,
+				78FE2B7FA0400B858E8CB307 /* MenuBarView.swift */,
+				CF531E055F57A83714086DBB /* PermissionExplainerView.swift */,
+				F4515B2220CD1A5CBAF9B1AE /* SettingsView.swift */,
+				1A2B8ABEACE28EC6DC3EB954 /* TeamsDeEsserApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E73C25059C6EB7F3A07D3751 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				27A35A4F35C3373C72451AC7 /* AggregateDeviceHandle.swift */,
+				C43F9DFB8BC5574AB4D5C279 /* AudioPipelineCoordinator.swift */,
+				5AC3FA3B918DC2DCC5594794 /* CoreAudioError.swift */,
+				FABAE28DBEA69C517B997D45 /* CoreAudioProperties.swift */,
+				539E2227110435538DBA4C5A /* ProcessTapHandle.swift */,
+				AC0AD31737158ADD9AF420E4 /* StreamFormatValidator.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		FE057A242FFEA14F08DE6389 /* Realtime */ = {
+			isa = PBXGroup;
+			children = (
+				252D245444AFB286B938A97C /* AudioBufferView.hpp */,
+				E048CEE77228291F00CBB07C /* Biquad.hpp */,
+				71C612AFD80988969EB80C7F /* DeEsserDSP.cpp */,
+				E47C5CED0134ABDA7E669553 /* DeEsserDSP.hpp */,
+				19576B21C457C365626B8342 /* TDRealtimeRenderer.h */,
+				040ED93B96BA6136B0E95586 /* TDRealtimeRenderer.mm */,
+			);
+			path = Realtime;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBD458B6014E2E2742C9F928 /* TeamsDeEsser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3C5816AEBDA4B9FB9533298 /* Build configuration list for PBXNativeTarget "TeamsDeEsser" */;
+			buildPhases = (
+				9408118BB6E7313DE5E215C5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeamsDeEsser;
+			packageProductDependencies = (
+			);
+			productName = TeamsDeEsser;
+			productReference = FFF2EAE63BBE539215D1005B /* TeamsDeEsser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D1A6D0EF54D034F3C5180C77 /* TeamsDeEsserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 556792683D7CD969B109A7F5 /* Build configuration list for PBXNativeTarget "TeamsDeEsserTests" */;
+			buildPhases = (
+				26A11D59A33D195339E3E26F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18709A928E9504B731FA35D4 /* PBXTargetDependency */,
+			);
+			name = TeamsDeEsserTests;
+			packageProductDependencies = (
+			);
+			productName = TeamsDeEsserTests;
+			productReference = 683ED431A5339EFA90F073FD /* TeamsDeEsserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BDC81E14E817A0D724FF7C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CBD458B6014E2E2742C9F928 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					D1A6D0EF54D034F3C5180C77 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 8A935CCBB976113C02AD5828 /* Build configuration list for PBXProject "TeamsDeEsser" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6AED674EDC758AEA8A19D9E4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 017985F693CA39CE8CEF2787 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBD458B6014E2E2742C9F928 /* TeamsDeEsser */,
+				D1A6D0EF54D034F3C5180C77 /* TeamsDeEsserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26A11D59A33D195339E3E26F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C4094FF5F8628D4FB0DC74B /* AudioPipelineStateTests.swift in Sources */,
+				CE35A9C75157BD8509620264 /* DeEsserDSP.cpp in Sources */,
+				9D0D3043BA3AAEFFF2AF283B /* DeEsserDSPTests.mm in Sources */,
+				F8230220301A0792B9CA2DEB /* OutputDeviceResolverTests.swift in Sources */,
+				E87A4C0EEC9B1D2032B3B6F6 /* TeamsProcessLocatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9408118BB6E7313DE5E215C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F40A6FB6B32A5DD4F34EAF4 /* AggregateDeviceHandle.swift in Sources */,
+				64BEA3D5D79B1F0873B9DA57 /* AppModel.swift in Sources */,
+				FFA571D52788FD904E4C04A8 /* AudioEnvironmentMonitor.swift in Sources */,
+				AB21590CC28691BC8416D4B5 /* AudioPipelineCoordinator.swift in Sources */,
+				36ED165362A29C3AA3B624EF /* CoreAudioError.swift in Sources */,
+				A4603497569FD3359E883F09 /* CoreAudioProperties.swift in Sources */,
+				E507832CC19401440ABECC7C /* DeEsserDSP.cpp in Sources */,
+				A05B37BED430C31A46E44D75 /* DeEsserSettings.swift in Sources */,
+				010D267A2A24FE0821FD16AB /* DiagnosticsSnapshot.swift in Sources */,
+				F14B28EA509852B3F213C3EF /* Logger+Categories.swift in Sources */,
+				A32EB8ADA42D229C4916154F /* MenuBarView.swift in Sources */,
+				7F2B25A26A99B2BB10973A0B /* OSStatus+Description.swift in Sources */,
+				43C8E6F08C8849BE1EF5D6B6 /* OutputDeviceResolver.swift in Sources */,
+				2A7C1D12B10F44EF96750F83 /* PermissionExplainerView.swift in Sources */,
+				0F4E7997320816C58F153F13 /* ProcessTapHandle.swift in Sources */,
+				2742880F630E17F1BF9B6D03 /* ProcessingState.swift in Sources */,
+				D7B595F60E706B27C25915E4 /* SettingsView.swift in Sources */,
+				2CF3DF9241F2F3CA1EA33697 /* StreamFormatValidator.swift in Sources */,
+				E7A9ABF9AE83C52730AE1B20 /* TDRealtimeRenderer.mm in Sources */,
+				D04E6C4EED52CC2E754342F4 /* TeamsDeEsserApp.swift in Sources */,
+				FE059227DEC518ADDBDCBB55 /* TeamsProcessLocator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18709A928E9504B731FA35D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBD458B6014E2E2742C9F928 /* TeamsDeEsser */;
+			targetProxy = 141F25552630D7651E4701C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		053F890BB6E9106AAC275D5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3A05BF17A53C1A1B48771D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/TeamsDeEsser/Realtime",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.TeamsDeEsser.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeamsDeEsser.app/Contents/MacOS/TeamsDeEsser";
+			};
+			name = Release;
+		};
+		3C17FEAEB2F03038B7F3E2EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TeamsDeEsser/Support/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.TeamsDeEsser;
+				PRODUCT_NAME = TeamsDeEsser;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "TeamsDeEsser/TeamsDeEsser-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		4153BBCA1EA5786BE49FC23C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B3FA673260DE2E3FE33726A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/TeamsDeEsser/Realtime",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.TeamsDeEsser.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeamsDeEsser.app/Contents/MacOS/TeamsDeEsser";
+			};
+			name = Debug;
+		};
+		F39F43063FB4DB790495DE37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TeamsDeEsser/Support/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.TeamsDeEsser;
+				PRODUCT_NAME = TeamsDeEsser;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "TeamsDeEsser/TeamsDeEsser-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		556792683D7CD969B109A7F5 /* Build configuration list for PBXNativeTarget "TeamsDeEsserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FA673260DE2E3FE33726A3 /* Debug */,
+				3A05BF17A53C1A1B48771D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8A935CCBB976113C02AD5828 /* Build configuration list for PBXProject "TeamsDeEsser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				053F890BB6E9106AAC275D5F /* Debug */,
+				4153BBCA1EA5786BE49FC23C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F3C5816AEBDA4B9FB9533298 /* Build configuration list for PBXNativeTarget "TeamsDeEsser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C17FEAEB2F03038B7F3E2EA /* Debug */,
+				F39F43063FB4DB790495DE37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BDC81E14E817A0D724FF7C4 /* Project object */;
+}
