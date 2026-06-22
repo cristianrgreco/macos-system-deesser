@@ -8,13 +8,11 @@ A macOS Tahoe (26.0+) menu-bar utility that de-esses **all system audio** in rea
 
 > **History:** this started as a Teams-only utility (see `spec.md`, written for that scope) and was generalised to system-wide. The product/target/bundle id were renamed from `TeamsDeEsser`/`local.TeamsDeEsser` to **`DeEsser`/`local.DeEsser`**. Where `spec.md` says "Teams", read "all system audio except this app"; this file and `IMPLEMENTATION_NOTES.md` are authoritative on the current scope.
 
-The Xcode project lives in the **`DeEsser/`** subdirectory; run all build commands from there. The repo root holds `spec.md`, `CLAUDE.md`, and the project folder.
+The Xcode project lives at the **repo root** — `project.yml`, the generated `DeEsser.xcodeproj`, the `DeEsser/` source folder, and `DeEsserTests/`, alongside `spec.md` and `CLAUDE.md`. Run all build commands from the repo root.
 
 ## Commands
 
 ```bash
-cd DeEsser
-
 # Regenerate the .xcodeproj — REQUIRED after adding/removing/renaming any source
 # file or editing project.yml. Sources are globbed by directory, so a new file is
 # invisible to the build until you regenerate. The generated project is committed.

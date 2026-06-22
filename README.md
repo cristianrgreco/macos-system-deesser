@@ -1,5 +1,9 @@
 # De-Esser
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="De-Esser menu-bar popover — strength slider, gain-reduction meter, and bypass toggle" width="380">
+</p>
+
 A local, on-device macOS menu-bar utility that reduces harsh sibilance (the
 painful "S" / "SH" sounds) in **all of your Mac's audio** in real time — without
 ever touching your microphone. Toggle it on when what you're listening to is
@@ -86,8 +90,6 @@ runtime dependency). A generated `DeEsser.xcodeproj` is included, so you can bui
 directly.
 
 ```bash
-cd DeEsser
-
 # (Only if you changed project.yml)
 xcodegen generate
 
