@@ -1,10 +1,10 @@
-# De-Esser
+# macOS System De-Esser
 
 <p align="left">
-  <img src="docs/screenshot.png" alt="De-Esser menu-bar popover — strength slider, gain-reduction meter, and bypass toggle" width="380">
+  <img src="docs/screenshot.png" alt="macOS System De-Esser menu-bar popover — strength slider, gain-reduction meter, and bypass toggle" width="380">
 </p>
 
-A local, on-device macOS menu-bar utility that reduces harsh sibilance (the
+**macOS System De-Esser** is a local, on-device menu-bar utility that reduces harsh sibilance (the
 painful "S" / "SH" sounds) in **all of your Mac's audio** in real time — without
 ever touching your microphone. Toggle it on when what you're listening to is
 harsh, and off when it isn't.
@@ -176,3 +176,9 @@ trigger a controlled, debounced rebuild.
 - No network access. No analytics. No update framework.
 - Your **microphone is never captured** — only audio your apps are playing back.
 - Diagnostic reports contain configuration/metadata only.
+
+---
+
+## License
+
+[MIT](LICENSE) © 2026 Cristian Greco
