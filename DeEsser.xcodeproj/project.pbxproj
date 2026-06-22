@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00F0A5E709B6A4655D0B3ED8 /* AggregateDeviceHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BD6A2F6CA3A0609BFD4EF /* AggregateDeviceHandle.swift */; };
 		034C607C11FBDE7A99526ABC /* PermissionExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27ECE479D7A6DB5332E6C2 /* PermissionExplainerView.swift */; };
+		0D3255E68032B1DD4B95A880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6820A482C9E9614426B4D52 /* Assets.xcassets */; };
 		113B9FFC3A4A84D7485D5CCA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6521AD6A42B46A914EB00 /* SettingsView.swift */; };
 		1170C6252C865BAE50592068 /* AudioEnvironmentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE17D8C4C7C26A6EC38917 /* AudioEnvironmentMonitor.swift */; };
 		1E6CD242135C6DF914E92AD2 /* AudioPipelineStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724BD84AD3B29F09C354B44 /* AudioPipelineStateTests.swift */; };
@@ -68,6 +69,7 @@
 		8EF8BA00377491BD02F2019C /* OSStatus+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSStatus+Description.swift"; sourceTree = "<group>"; };
 		BA75DBCB8384F98929221C20 /* Logger+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Categories.swift"; sourceTree = "<group>"; };
 		BEF923243A16E0D2C8C65AA5 /* ProcessTapHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTapHandle.swift; sourceTree = "<group>"; };
+		C6820A482C9E9614426B4D52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7651D421C527C22D9F61985 /* StreamFormatValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamFormatValidator.swift; sourceTree = "<group>"; };
 		C7D39F47296AC759D8ED97AE /* OutputDeviceResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputDeviceResolver.swift; sourceTree = "<group>"; };
 		D724BD84AD3B29F09C354B44 /* AudioPipelineStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPipelineStateTests.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		B2C892B30DEEEA81E2C17406 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				C6820A482C9E9614426B4D52 /* Assets.xcassets */,
 				BA75DBCB8384F98929221C20 /* Logger+Categories.swift */,
 				8EF8BA00377491BD02F2019C /* OSStatus+Description.swift */,
 			);
@@ -193,6 +196,7 @@
 			buildConfigurationList = 657B76E34FDA87E104301806 /* Build configuration list for PBXNativeTarget "DeEsser" */;
 			buildPhases = (
 				4AC5D9B1F3DF20E5B8AA4881 /* Sources */,
+				C8C10A690C288813688BAF60 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +265,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8C10A690C288813688BAF60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D3255E68032B1DD4B95A880 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4AC5D9B1F3DF20E5B8AA4881 /* Sources */ = {
