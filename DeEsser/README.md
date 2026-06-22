@@ -9,15 +9,6 @@ It uses public **Core Audio process-tap** APIs on macOS Tahoe (26). There is **n
 audio driver, no system/kernel extension, and no virtual device**. Audio is never
 recorded, saved, or sent anywhere.
 
-> **History:** this began as a Teams-only utility (the original design lives in
-> `spec.md`) and was generalised to system-wide. It was renamed from
-> `TeamsDeEsser` / `local.TeamsDeEsser` to **`DeEsser` / `local.DeEsser`**.
-
-> **Status:** v1, local Developer build. Builds, unit-tests, and static analysis
-> pass on Xcode 26.5 / macOS 26. The live capture/replay path is implemented; the
-> on-device manual test matrix should be run by an operator (see
-> `IMPLEMENTATION_NOTES.md`) — in particular, confirm there is no feedback loop.
-
 ---
 
 ## How it works
@@ -45,11 +36,45 @@ once, both are funneled to the default while De-Esser is enabled.
 
 ---
 
+## Install
+
+**Download the latest `DeEsser.dmg` from the [Releases](../../releases) page**, open
+it, and drag **DeEsser.app** to your **Applications** folder. Then launch it — look
+for the waveform icon in the menu bar (it has no Dock icon).
+
+### First launch — Gatekeeper
+
+The app is **ad-hoc signed and not notarized** (it's free and open-source, with no
+paid Apple Developer ID). So the first time you open it, macOS will warn that it
+"cannot verify the developer." To open it anyway:
+
+1. Try to open **DeEsser.app** once (the warning appears — that's expected).
+2. Go to **System Settings ▸ Privacy & Security**, scroll to the Security section,
+   and click **Open Anyway** next to the DeEsser message.
+3. Confirm. macOS remembers the choice; you won't be asked again for this version.
+
+> Prefer not to trust a downloaded binary? [Build from source](#build) instead —
+> a locally built app isn't quarantined and opens without this step.
+
+### Updating
+
+Because the app is ad-hoc signed, each released version has a different signature,
+so **after installing a new version macOS may ask you to re-grant system-audio
+recording permission** (System Settings ▸ Privacy & Security ▸ System Audio
+Recording). This is expected and only takes a click. (A paid Developer ID would
+keep the grant across updates; this project doesn't use one.)
+
+---
+
 ## Requirements
 
-- macOS Tahoe **26.0+**
+To **run**: macOS Tahoe **26.0+**, on Apple Silicon or Intel.
+
+To **build from source** you additionally need:
+
 - Xcode **26.x** (macOS 26 SDK)
-- Apple Silicon or Intel Mac
+- [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`) —
+  only if you change `project.yml`
 
 ---
 
@@ -129,10 +154,9 @@ Click the menu-bar icon:
   obvious drop in harsh sibilance). Everything else is pinned to the
   EasyEffects/Calf defaults.
 - **Gain-reduction meter** — live, 0–24 dB.
-- **Bypass for comparison** — keeps audio captured and dry-muted but crossfades
-  the de-esser to unity, for click-free A/B testing. (Different from the master
-  switch, which removes the tap entirely.)
-- **Rebuild audio path** — manually tears down and rebuilds the graph.
+- **Bypass** — keeps audio captured but crossfades the de-esser to unity, for
+  click-free A/B testing. (Different from the master switch, which removes the
+  tap entirely.)
 - **Settings…** — startup options, launch-at-login, the strength slider, and a
   **Diagnostics** tab (chosen device, object IDs, heartbeat, meters, last Core
   Audio error, and a *Copy diagnostic report* button — **metadata only, never
@@ -150,10 +174,9 @@ If audio ever sounds wrong:
 
 1. Click the menu-bar icon and turn the **master switch off** — this immediately
    tears down the graph and restores normal playback.
-2. Or use **Rebuild audio path**.
-3. Or **Quit** the app (menu ▸ Quit). On quit the graph is torn down; even on a
-   force-quit, Core Audio reclaims the tap and the `mutedWhenTapped` behavior
-   unmutes, so normal audio returns within about a second.
+2. Or **Quit** the app (menu ▸ Quit). The graph is torn down on quit — and even
+   on a force-quit, macOS reclaims the tap and normal audio returns within about
+   a second.
 
 The utility **fails open**: any failure to build or run the processing graph
 results in normal, unprocessed audio.

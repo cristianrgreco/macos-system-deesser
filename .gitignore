@@ -19,5 +19,9 @@ DerivedData/
 .build/
 .swiftpm/
 
+# Release packaging (DMG staging + artifacts)
+dist/
+*.dmg
+
 # Claude Code local (machine-specific) settings
 .claude/settings.local.json
