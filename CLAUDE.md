@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A macOS Tahoe (26.0+) menu-bar utility that de-esses **all system audio** in real time. It takes a **global** Core Audio tap of every process *except itself*, runs the mix through a de-esser, and plays it back out the current default output device — without ever touching the microphone. It is a `LSUIElement` accessory (no Dock icon). Users toggle it on/off as needed.
 
-> **History:** this started as a Teams-only utility (see `spec.md`, written for that scope) and was generalised to system-wide. The product/target/bundle id were renamed from `TeamsDeEsser`/`local.TeamsDeEsser` to **`DeEsser`/`local.DeEsser`**. Where `spec.md` says "Teams", read "all system audio except this app"; this file and `IMPLEMENTATION_NOTES.md` are authoritative on the current scope.
+> **History:** this started as a Teams-only utility (see `docs/SPEC.md`, written for that scope) and was generalised to system-wide. The product/target/bundle id were renamed from `TeamsDeEsser`/`local.TeamsDeEsser` to **`DeEsser`/`local.DeEsser`**. Where `docs/SPEC.md` says "Teams", read "all system audio except this app"; this file and `docs/IMPLEMENTATION_NOTES.md` are authoritative on the current scope.
 
-The Xcode project lives at the **repo root** — `project.yml`, the generated `DeEsser.xcodeproj`, the `DeEsser/` source folder, and `DeEsserTests/`, alongside `spec.md` and `CLAUDE.md`. Run all build commands from the repo root.
+The Xcode project lives at the **repo root** — `project.yml`, the generated `DeEsser.xcodeproj`, the `DeEsser/` source folder, and `DeEsserTests/`, alongside `CLAUDE.md`, `README.md`, and the `docs/` folder (`SPEC.md`, `IMPLEMENTATION_NOTES.md`, screenshot). Run all build commands from the repo root.
 
 ## Commands
 
@@ -63,7 +63,7 @@ One user control. `DeEsserSettings.strength` (0…1) maps **threshold + ratio to
 
 ## Conventions and gotchas
 
-- **`spec.md` is the original v1 spec** (Teams-only), section-numbered; code comments reference it as "spec §N" and those references still point at the section that shaped the code. It is **superseded on scope** by this file and `IMPLEMENTATION_NOTES.md` (system-wide, renamed). **`IMPLEMENTATION_NOTES.md` records every deviation, the SDK-name differences, and the engineering rationale** — read it before changing graph lifecycle, the aggregate-device keys, the tap topology, or the DSP, and update it when you deviate further.
+- **`docs/SPEC.md` is the original v1 spec** (Teams-only), section-numbered; code comments reference it as "spec §N" and those references still point at the section that shaped the code. It is **superseded on scope** by this file and `docs/IMPLEMENTATION_NOTES.md` (system-wide, renamed). **`docs/IMPLEMENTATION_NOTES.md` records every deviation, the SDK-name differences, and the engineering rationale** — read it before changing graph lifecycle, the aggregate-device keys, the tap topology, or the DSP, and update it when you deviate further.
 - **No `AudioHardwareSystem` / `AudioHardwareProcess` Swift overlay exists** in this SDK; output-device resolution and the self-process lookup use the **raw C Core Audio property API** (`Audio/CoreAudioProperties.swift`, `Discovery/`). See IMPLEMENTATION_NOTES §1.
 - The app is **ad-hoc signed** (`CODE_SIGN_IDENTITY = "-"`), Hardened Runtime **off**, App Sandbox **off**, for frictionless local builds. It requests **only** system-audio capture (`NSAudioCaptureUsageDescription`), never the mic. The bundle id is **`local.DeEsser`**; the granted system-audio permission is keyed to it, so keep it stable (renaming it forces the user to re-grant permission).
 - `kAudioAggregateDeviceTapAutoStartKey` must be `Int(0)` (CFNumber), not `true`; a non-zero value parks the device until the tapped process plays and the watchdog will tear the graph down. See IMPLEMENTATION_NOTES §2.

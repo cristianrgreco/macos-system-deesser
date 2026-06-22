@@ -1,6 +1,6 @@
 # De-Esser
 
-<p align="center">
+<p align="left">
   <img src="docs/screenshot.png" alt="De-Esser menu-bar popover — strength slider, gain-reduction meter, and bypass toggle" width="380">
 </p>
 
@@ -170,44 +170,9 @@ trigger a controlled, debounced rebuild.
 
 ---
 
-## Emergency disable
-
-If audio ever sounds wrong:
-
-1. Click the menu-bar icon and turn the **master switch off** — this immediately
-   tears down the graph and restores normal playback.
-2. Or **Quit** the app (menu ▸ Quit). The graph is torn down on quit — and even
-   on a force-quit, macOS reclaims the tap and normal audio returns within about
-   a second.
-
-The utility **fails open**: any failure to build or run the processing graph
-results in normal, unprocessed audio.
-
----
-
 ## Privacy
 
 - No audio is recorded, saved, transcribed, transmitted, or retained.
 - No network access. No analytics. No update framework.
 - Your **microphone is never captured** — only audio your apps are playing back.
 - Diagnostic reports contain configuration/metadata only.
-
----
-
-## Project layout
-
-See `project.yml` and the source tree under `DeEsser/`:
-
-- `App/` — SwiftUI menu-bar + Settings UI and the `AppModel`.
-- `Models/` — state machine, settings, diagnostics value types.
-- `Discovery/` — default-output resolution and Core Audio property + power
-  monitoring.
-- `Audio/` — tap and aggregate RAII handles, property helpers (including the
-  self-process lookup that feeds the global tap's exclude list), format
-  validation, and the `AudioPipelineCoordinator` lifecycle state machine.
-- `Realtime/` — Objective-C++ renderer (`TDRealtimeRenderer`) and the pure C++
-  de-esser DSP (`DeEsserDSP`, `Biquad`, `AudioBufferView`).
-- `DeEsserTests/` — DSP and orchestration unit tests.
-
-`IMPLEMENTATION_NOTES.md` documents the scope change, the SDK-name differences
-adapted during implementation, and the current verification status.

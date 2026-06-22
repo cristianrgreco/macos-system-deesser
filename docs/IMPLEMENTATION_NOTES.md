@@ -6,7 +6,7 @@ device/format observations, and the current verification status.
 
 ## 0. Scope change: Teams-only → system-wide (and rename)
 
-`spec.md` describes a **Teams-only** utility. The product was generalised to
+`SPEC.md` describes a **Teams-only** utility. The product was generalised to
 de-ess **all system audio**, and renamed from `TeamsDeEsser` / `local.TeamsDeEsser`
 to **`DeEsser` / `local.DeEsser`** (target, scheme, directories, product name, and
 bundle id). Consequences, all within the same public APIs:
