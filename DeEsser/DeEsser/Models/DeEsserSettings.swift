@@ -25,10 +25,15 @@ struct DeEsserSettings: Equatable, Codable {
     // MARK: Adjustable
     static let strengthRange: ClosedRange<Float> = 0...1
 
+    /// The strength a fresh install starts at. The mapping still anchors 0.5 to
+    /// the stock EasyEffects defaults; this default just starts the user a bit
+    /// heavier than that, since light de-essing is rarely enough in practice.
+    static let defaultStrength: Float = 0.75
+
     /// 0 = barely de-essing, 0.5 = EasyEffects default, 1 = very heavy de-essing.
     var strength: Float
 
-    init(strength: Float = 0.5) {
+    init(strength: Float = DeEsserSettings.defaultStrength) {
         self.strength = strength.clamped(to: Self.strengthRange)
     }
 
@@ -43,12 +48,12 @@ struct DeEsserSettings: Equatable, Codable {
             self.init(strength: s)
         } else {
             let legacy = try decoder.container(keyedBy: LegacyKeys.self)
-            self.init(strength: try legacy.decodeIfPresent(Float.self, forKey: .aggressiveness) ?? 0.5)
+            self.init(strength: try legacy.decodeIfPresent(Float.self, forKey: .aggressiveness) ?? Self.defaultStrength)
         }
     }
 
-    /// The default ("EasyEffects") settings.
-    static var standard: DeEsserSettings { DeEsserSettings(strength: 0.5) }
+    /// The settings a fresh install starts with (strength = `defaultStrength`).
+    static var standard: DeEsserSettings { DeEsserSettings(strength: defaultStrength) }
 
     // MARK: Derived Calf controls
     // The lower half (0…0.5) eases in from "off" to the EasyEffects default; the

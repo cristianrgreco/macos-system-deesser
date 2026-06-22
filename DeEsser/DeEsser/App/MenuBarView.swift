@@ -29,7 +29,7 @@ struct MenuBarView: View {
 
     private var header: some View {
         HStack {
-            Image(systemName: "waveform.badge.mic")
+            Image(systemName: "waveform")
             Text("De-Esser").font(.headline)
             Spacer()
             Toggle("", isOn: Binding(get: { model.enabled },

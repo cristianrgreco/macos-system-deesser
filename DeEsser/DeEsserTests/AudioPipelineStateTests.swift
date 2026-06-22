@@ -29,10 +29,16 @@ final class AudioPipelineStateTests: XCTestCase {
         XCTAssertEqual(DeEsserSettings(strength: -5).strength, 0.0)
     }
 
-    func testDefaultMatchesEasyEffectsDefaults() {
-        // At 0.5 the derived Calf controls equal the stock EasyEffects defaults.
-        let s = DeEsserSettings.standard
-        XCTAssertEqual(s.strength, 0.5, accuracy: 1e-6)
+    func testDefaultStartingStrength() {
+        // A fresh install starts at the default strength.
+        XCTAssertEqual(DeEsserSettings.standard.strength, 0.75, accuracy: 1e-6)
+        XCTAssertEqual(DeEsserSettings.defaultStrength, 0.75, accuracy: 1e-6)
+    }
+
+    func testMidpointMatchesEasyEffectsDefaults() {
+        // At 0.5 the derived Calf controls equal the stock EasyEffects defaults,
+        // regardless of where the default starting strength sits.
+        let s = DeEsserSettings(strength: 0.5)
         XCTAssertEqual(s.thresholdDb, -18, accuracy: 1e-4)
         XCTAssertEqual(s.ratio, 3, accuracy: 1e-4)
     }

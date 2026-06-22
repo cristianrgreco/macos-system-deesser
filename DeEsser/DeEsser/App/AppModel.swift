@@ -41,7 +41,7 @@ final class AppModel {
     }
 
     init() {
-        // Load persisted settings (fall back to the EasyEffects default).
+        // Load persisted settings (fall back to the default starting strength).
         if let data = defaults.data(forKey: Key.settings),
            let decoded = try? JSONDecoder().decode(DeEsserSettings.self, from: data) {
             settings = decoded

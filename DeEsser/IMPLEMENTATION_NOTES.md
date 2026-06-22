@@ -162,7 +162,10 @@ reject `channels-in: 0`.
     piecewise map of threshold and ratio that eases from "off" up to the stock
     EasyEffects default (−18 dBFS, 3:1) at the 0.5 midpoint, then ramps hard over
     the upper half to −42 dBFS / 12:1 so the top of the slider is a deliberately
-    heavy de-ess. Every other Calf control is pinned to its EasyEffects default.
+    heavy de-ess. A fresh install starts at **strength 0.75**
+    (`DeEsserSettings.defaultStrength`), a bit past the EasyEffects midpoint,
+    because light de-essing is rarely enough in practice; the 0.5 anchor is
+    unchanged. Every other Calf control is pinned to its EasyEffects default.
     The old Preset picker, Type (Broadband/Notch) switch, Frequency / Threshold /
     Max-reduction / Sharpness sliders and the Solo "listen to band" toggle were
     removed. (The control was briefly named "Aggressiveness"; the persisted
