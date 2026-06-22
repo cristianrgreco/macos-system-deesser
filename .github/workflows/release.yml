@@ -36,24 +36,11 @@ jobs:
             -derivedDataPath .build \
             build
 
+      - name: Install create-dmg
+        run: brew install create-dmg
+
       - name: Package DMG
-        run: |
-          APP_PATH=".build/Build/Products/Release/DeEsser.app"
-          if [ ! -d "$APP_PATH" ]; then
-            echo "App not found at $APP_PATH" >&2
-            exit 1
-          fi
-          rm -rf dist
-          mkdir -p dist
-          cp -R "$APP_PATH" dist/DeEsser.app
-          # Drag-to-install target inside the DMG window.
-          ln -s /Applications dist/Applications
-          hdiutil create \
-            -volname "DeEsser" \
-            -srcfolder dist \
-            -ov \
-            -format UDZO \
-            DeEsser.dmg
+        run: ./dmg/build-dmg.sh ".build/Build/Products/Release/DeEsser.app" DeEsser.dmg
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
