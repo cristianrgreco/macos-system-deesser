@@ -1,0 +1,75 @@
+name: DeEsser
+
+options:
+  bundleIdPrefix: local
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CLANG_CXX_LANGUAGE_STANDARD: "c++17"
+    CLANG_CXX_LIBRARY: "libc++"
+    GCC_C_LANGUAGE_STANDARD: "gnu17"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+    ENABLE_HARDENED_RUNTIME: NO
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+    GCC_WARN_ABOUT_RETURN_TYPE: YES
+    CLANG_WARN_DOCUMENTATION_COMMENTS: NO
+
+targets:
+  DeEsser:
+    type: application
+    platform: macOS
+    sources:
+      - path: DeEsser
+        excludes:
+          - "Support/Info.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.DeEsser
+        PRODUCT_NAME: DeEsser
+        INFOPLIST_FILE: DeEsser/Support/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_KEY_LSUIElement: YES
+        SWIFT_OBJC_BRIDGING_HEADER: DeEsser/DeEsser-Bridging-Header.h
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        COMBINE_HIDPI_IMAGES: YES
+
+  DeEsserTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: DeEsserTests
+      - path: DeEsser/Realtime/DeEsserDSP.cpp
+      - path: DeEsser/Realtime/DeEsserDSP.hpp
+      - path: DeEsser/Realtime/Biquad.hpp
+    dependencies:
+      - target: DeEsser
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.DeEsser.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/DeEsser.app/Contents/MacOS/DeEsser"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        HEADER_SEARCH_PATHS:
+          - "$(SRCROOT)/DeEsser/Realtime"
+        CLANG_CXX_LANGUAGE_STANDARD: "c++17"
+
+schemes:
+  DeEsser:
+    build:
+      targets:
+        DeEsser: all
+        DeEsserTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - DeEsserTests

@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00F0A5E709B6A4655D0B3ED8 /* AggregateDeviceHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BD6A2F6CA3A0609BFD4EF /* AggregateDeviceHandle.swift */; };
+		034C607C11FBDE7A99526ABC /* PermissionExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27ECE479D7A6DB5332E6C2 /* PermissionExplainerView.swift */; };
+		113B9FFC3A4A84D7485D5CCA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6521AD6A42B46A914EB00 /* SettingsView.swift */; };
+		1170C6252C865BAE50592068 /* AudioEnvironmentMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE17D8C4C7C26A6EC38917 /* AudioEnvironmentMonitor.swift */; };
+		1E6CD242135C6DF914E92AD2 /* AudioPipelineStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724BD84AD3B29F09C354B44 /* AudioPipelineStateTests.swift */; };
+		29C05F892B43C0D12538C902 /* StreamFormatValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7651D421C527C22D9F61985 /* StreamFormatValidator.swift */; };
+		392DE377EC89C12949BC7968 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B682F1565C1CFB7FC242A7 /* AppModel.swift */; };
+		48BFB8B33EF48D37049A350D /* TDRealtimeRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 459D33A94CC9A4818BCCFC50 /* TDRealtimeRenderer.mm */; };
+		490F719FC4B6C7758FF8422D /* DeEsserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6969FD6DEFE932FFDB2D89AE /* DeEsserSettings.swift */; };
+		6DA8540AD064E38C7FA8C58F /* OutputDeviceResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D39F47296AC759D8ED97AE /* OutputDeviceResolver.swift */; };
+		7472B597349E8CE8C615EAC6 /* DeEsserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B89F02BFC16DCB7F2666F /* DeEsserApp.swift */; };
+		77AB56718D7F356CE6147E69 /* Logger+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA75DBCB8384F98929221C20 /* Logger+Categories.swift */; };
+		7C104BAFE3EFE23F60082EEF /* CoreAudioProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E6195D6FFF54BE3B048AE6 /* CoreAudioProperties.swift */; };
+		7F380B80656091C6938033DD /* DeEsserDSP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58D501FF756186BE00ABB57B /* DeEsserDSP.cpp */; };
+		8028FED3405C612EF8493708 /* ProcessTapHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF923243A16E0D2C8C65AA5 /* ProcessTapHandle.swift */; };
+		85CDC43595011F6C9FBA33A2 /* DeEsserDSP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58D501FF756186BE00ABB57B /* DeEsserDSP.cpp */; };
+		881F8AD477B187A29294BDA3 /* ProcessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73568F72CD6FA98D8B7AC9D7 /* ProcessingState.swift */; };
+		94E0F1B8A9836AB20C72F502 /* OSStatus+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF8BA00377491BD02F2019C /* OSStatus+Description.swift */; };
+		9686449D74E18CD43B612486 /* DeEsserDSPTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 003FF7CBCB87C8BB5003157B /* DeEsserDSPTests.mm */; };
+		A49CAF2B653169B896C6C074 /* CoreAudioError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC29784645B8B059E0392A /* CoreAudioError.swift */; };
+		C8CED3B83D3FE155602EED52 /* AudioPipelineCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE667DA0F849B8A02261F73 /* AudioPipelineCoordinator.swift */; };
+		C98D10A13BCECDE847C65CEE /* DiagnosticsSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953A23FDFDA2FDF8699D4D4 /* DiagnosticsSnapshot.swift */; };
+		D14A320C40ACC63FC8051F8A /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B444888E6AF5702B114599B /* MenuBarView.swift */; };
+		E6BFF7FB6CB421AAF8D77D85 /* OutputDeviceResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BECDEA9B7AF281C81405D8 /* OutputDeviceResolverTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F8FEB8457FA9C68B7D7BC23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72A552C058805573821514B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48879E506037BD299F227346;
+			remoteInfo = DeEsser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		003FF7CBCB87C8BB5003157B /* DeEsserDSPTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DeEsserDSPTests.mm; sourceTree = "<group>"; };
+		03C39BA235A1A1EFD0009C06 /* DeEsser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeEsser-Bridging-Header.h"; sourceTree = "<group>"; };
+		07AC29784645B8B059E0392A /* CoreAudioError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAudioError.swift; sourceTree = "<group>"; };
+		167A177184215B16163CF8F1 /* AudioBufferView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioBufferView.hpp; sourceTree = "<group>"; };
+		19E6195D6FFF54BE3B048AE6 /* CoreAudioProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAudioProperties.swift; sourceTree = "<group>"; };
+		1B2F91750265B74B95988878 /* Biquad.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Biquad.hpp; sourceTree = "<group>"; };
+		27F6521AD6A42B46A914EB00 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		317B89F02BFC16DCB7F2666F /* DeEsserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeEsserApp.swift; sourceTree = "<group>"; };
+		33EE17D8C4C7C26A6EC38917 /* AudioEnvironmentMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEnvironmentMonitor.swift; sourceTree = "<group>"; };
+		3D6BD6A2F6CA3A0609BFD4EF /* AggregateDeviceHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggregateDeviceHandle.swift; sourceTree = "<group>"; };
+		3FA1C88D4AD2E3FF4E859C8F /* TDRealtimeRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDRealtimeRenderer.h; sourceTree = "<group>"; };
+		459D33A94CC9A4818BCCFC50 /* TDRealtimeRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TDRealtimeRenderer.mm; sourceTree = "<group>"; };
+		4DE667DA0F849B8A02261F73 /* AudioPipelineCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPipelineCoordinator.swift; sourceTree = "<group>"; };
+		52B682F1565C1CFB7FC242A7 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		58D501FF756186BE00ABB57B /* DeEsserDSP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DeEsserDSP.cpp; sourceTree = "<group>"; };
+		66A6E15D772C7AB7757E6C7B /* DeEsserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeEsserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6969FD6DEFE932FFDB2D89AE /* DeEsserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeEsserSettings.swift; sourceTree = "<group>"; };
+		73568F72CD6FA98D8B7AC9D7 /* ProcessingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingState.swift; sourceTree = "<group>"; };
+		7B444888E6AF5702B114599B /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		7E523602F05EAD4685EB44B4 /* DeEsser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeEsser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86BECDEA9B7AF281C81405D8 /* OutputDeviceResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputDeviceResolverTests.swift; sourceTree = "<group>"; };
+		8EF8BA00377491BD02F2019C /* OSStatus+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSStatus+Description.swift"; sourceTree = "<group>"; };
+		BA75DBCB8384F98929221C20 /* Logger+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Categories.swift"; sourceTree = "<group>"; };
+		BEF923243A16E0D2C8C65AA5 /* ProcessTapHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTapHandle.swift; sourceTree = "<group>"; };
+		C7651D421C527C22D9F61985 /* StreamFormatValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamFormatValidator.swift; sourceTree = "<group>"; };
+		C7D39F47296AC759D8ED97AE /* OutputDeviceResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputDeviceResolver.swift; sourceTree = "<group>"; };
+		D724BD84AD3B29F09C354B44 /* AudioPipelineStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPipelineStateTests.swift; sourceTree = "<group>"; };
+		ED27ECE479D7A6DB5332E6C2 /* PermissionExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionExplainerView.swift; sourceTree = "<group>"; };
+		F953A23FDFDA2FDF8699D4D4 /* DiagnosticsSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsSnapshot.swift; sourceTree = "<group>"; };
+		F992AC79576AB048BC0C0F81 /* DeEsserDSP.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DeEsserDSP.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2FFFC3CA0831824C89895CB4 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				3D6BD6A2F6CA3A0609BFD4EF /* AggregateDeviceHandle.swift */,
+				4DE667DA0F849B8A02261F73 /* AudioPipelineCoordinator.swift */,
+				07AC29784645B8B059E0392A /* CoreAudioError.swift */,
+				19E6195D6FFF54BE3B048AE6 /* CoreAudioProperties.swift */,
+				BEF923243A16E0D2C8C65AA5 /* ProcessTapHandle.swift */,
+				C7651D421C527C22D9F61985 /* StreamFormatValidator.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		443A8C8606DC535FB436820F /* DeEsser */ = {
+			isa = PBXGroup;
+			children = (
+				970369D9F4ECE46C41E84647 /* App */,
+				2FFFC3CA0831824C89895CB4 /* Audio */,
+				65FC77EDF38562DF777D844F /* Discovery */,
+				B4FB40D7EC3393C8052BE2BA /* Models */,
+				F5B46CA5BBE7FCFADE48022C /* Realtime */,
+				B2C892B30DEEEA81E2C17406 /* Support */,
+				03C39BA235A1A1EFD0009C06 /* DeEsser-Bridging-Header.h */,
+			);
+			path = DeEsser;
+			sourceTree = "<group>";
+		};
+		5A7487D006F9B7B5EBEC69BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E523602F05EAD4685EB44B4 /* DeEsser.app */,
+				66A6E15D772C7AB7757E6C7B /* DeEsserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65FC77EDF38562DF777D844F /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				33EE17D8C4C7C26A6EC38917 /* AudioEnvironmentMonitor.swift */,
+				C7D39F47296AC759D8ED97AE /* OutputDeviceResolver.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		8702E858CD64534052399962 /* DeEsserTests */ = {
+			isa = PBXGroup;
+			children = (
+				D724BD84AD3B29F09C354B44 /* AudioPipelineStateTests.swift */,
+				003FF7CBCB87C8BB5003157B /* DeEsserDSPTests.mm */,
+				86BECDEA9B7AF281C81405D8 /* OutputDeviceResolverTests.swift */,
+			);
+			path = DeEsserTests;
+			sourceTree = "<group>";
+		};
+		970369D9F4ECE46C41E84647 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				52B682F1565C1CFB7FC242A7 /* AppModel.swift */,
+				317B89F02BFC16DCB7F2666F /* DeEsserApp.swift */,
+				7B444888E6AF5702B114599B /* MenuBarView.swift */,
+				ED27ECE479D7A6DB5332E6C2 /* PermissionExplainerView.swift */,
+				27F6521AD6A42B46A914EB00 /* SettingsView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B2C892B30DEEEA81E2C17406 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BA75DBCB8384F98929221C20 /* Logger+Categories.swift */,
+				8EF8BA00377491BD02F2019C /* OSStatus+Description.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B4FB40D7EC3393C8052BE2BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6969FD6DEFE932FFDB2D89AE /* DeEsserSettings.swift */,
+				F953A23FDFDA2FDF8699D4D4 /* DiagnosticsSnapshot.swift */,
+				73568F72CD6FA98D8B7AC9D7 /* ProcessingState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9E96A4B67E85C26B5DDB3C3 = {
+			isa = PBXGroup;
+			children = (
+				443A8C8606DC535FB436820F /* DeEsser */,
+				8702E858CD64534052399962 /* DeEsserTests */,
+				5A7487D006F9B7B5EBEC69BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5B46CA5BBE7FCFADE48022C /* Realtime */ = {
+			isa = PBXGroup;
+			children = (
+				167A177184215B16163CF8F1 /* AudioBufferView.hpp */,
+				1B2F91750265B74B95988878 /* Biquad.hpp */,
+				58D501FF756186BE00ABB57B /* DeEsserDSP.cpp */,
+				F992AC79576AB048BC0C0F81 /* DeEsserDSP.hpp */,
+				3FA1C88D4AD2E3FF4E859C8F /* TDRealtimeRenderer.h */,
+				459D33A94CC9A4818BCCFC50 /* TDRealtimeRenderer.mm */,
+			);
+			path = Realtime;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48879E506037BD299F227346 /* DeEsser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 657B76E34FDA87E104301806 /* Build configuration list for PBXNativeTarget "DeEsser" */;
+			buildPhases = (
+				4AC5D9B1F3DF20E5B8AA4881 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeEsser;
+			packageProductDependencies = (
+			);
+			productName = DeEsser;
+			productReference = 7E523602F05EAD4685EB44B4 /* DeEsser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8C1317A8EC459BCC71F0FD48 /* DeEsserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C523AA17A646A90B65A15B /* Build configuration list for PBXNativeTarget "DeEsserTests" */;
+			buildPhases = (
+				8FCD207F887DAA46964166BD /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D2C63DAD45F0F26A864D95E /* PBXTargetDependency */,
+			);
+			name = DeEsserTests;
+			packageProductDependencies = (
+			);
+			productName = DeEsserTests;
+			productReference = 66A6E15D772C7AB7757E6C7B /* DeEsserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72A552C058805573821514B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					48879E506037BD299F227346 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					8C1317A8EC459BCC71F0FD48 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 3D69BF94934465DD699A34C1 /* Build configuration list for PBXProject "DeEsser" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C9E96A4B67E85C26B5DDB3C3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5A7487D006F9B7B5EBEC69BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48879E506037BD299F227346 /* DeEsser */,
+				8C1317A8EC459BCC71F0FD48 /* DeEsserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AC5D9B1F3DF20E5B8AA4881 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F0A5E709B6A4655D0B3ED8 /* AggregateDeviceHandle.swift in Sources */,
+				392DE377EC89C12949BC7968 /* AppModel.swift in Sources */,
+				1170C6252C865BAE50592068 /* AudioEnvironmentMonitor.swift in Sources */,
+				C8CED3B83D3FE155602EED52 /* AudioPipelineCoordinator.swift in Sources */,
+				A49CAF2B653169B896C6C074 /* CoreAudioError.swift in Sources */,
+				7C104BAFE3EFE23F60082EEF /* CoreAudioProperties.swift in Sources */,
+				7472B597349E8CE8C615EAC6 /* DeEsserApp.swift in Sources */,
+				7F380B80656091C6938033DD /* DeEsserDSP.cpp in Sources */,
+				490F719FC4B6C7758FF8422D /* DeEsserSettings.swift in Sources */,
+				C98D10A13BCECDE847C65CEE /* DiagnosticsSnapshot.swift in Sources */,
+				77AB56718D7F356CE6147E69 /* Logger+Categories.swift in Sources */,
+				D14A320C40ACC63FC8051F8A /* MenuBarView.swift in Sources */,
+				94E0F1B8A9836AB20C72F502 /* OSStatus+Description.swift in Sources */,
+				6DA8540AD064E38C7FA8C58F /* OutputDeviceResolver.swift in Sources */,
+				034C607C11FBDE7A99526ABC /* PermissionExplainerView.swift in Sources */,
+				8028FED3405C612EF8493708 /* ProcessTapHandle.swift in Sources */,
+				881F8AD477B187A29294BDA3 /* ProcessingState.swift in Sources */,
+				113B9FFC3A4A84D7485D5CCA /* SettingsView.swift in Sources */,
+				29C05F892B43C0D12538C902 /* StreamFormatValidator.swift in Sources */,
+				48BFB8B33EF48D37049A350D /* TDRealtimeRenderer.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FCD207F887DAA46964166BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E6CD242135C6DF914E92AD2 /* AudioPipelineStateTests.swift in Sources */,
+				85CDC43595011F6C9FBA33A2 /* DeEsserDSP.cpp in Sources */,
+				9686449D74E18CD43B612486 /* DeEsserDSPTests.mm in Sources */,
+				E6BFF7FB6CB421AAF8D77D85 /* OutputDeviceResolverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D2C63DAD45F0F26A864D95E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48879E506037BD299F227346 /* DeEsser */;
+			targetProxy = 3F8FEB8457FA9C68B7D7BC23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2D78EA3963C5926FD709255C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		367B56E2393F94340196086B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/DeEsser/Realtime",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.DeEsser.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeEsser.app/Contents/MacOS/DeEsser";
+			};
+			name = Release;
+		};
+		3B69554A0131A38635BF44B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/DeEsser/Realtime",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.DeEsser.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeEsser.app/Contents/MacOS/DeEsser";
+			};
+			name = Debug;
+		};
+		C89CF5B5BFA9AEDDECA44F55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeEsser/Support/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.DeEsser;
+				PRODUCT_NAME = DeEsser;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "DeEsser/DeEsser-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		E0675CCB2D27359FA4D2B159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DeEsser/Support/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.DeEsser;
+				PRODUCT_NAME = DeEsser;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "DeEsser/DeEsser-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		E982DFEBF60C0FD760D60B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D69BF94934465DD699A34C1 /* Build configuration list for PBXProject "DeEsser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D78EA3963C5926FD709255C /* Debug */,
+				E982DFEBF60C0FD760D60B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		657B76E34FDA87E104301806 /* Build configuration list for PBXNativeTarget "DeEsser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C89CF5B5BFA9AEDDECA44F55 /* Debug */,
+				E0675CCB2D27359FA4D2B159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		84C523AA17A646A90B65A15B /* Build configuration list for PBXNativeTarget "DeEsserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B69554A0131A38635BF44B0 /* Debug */,
+				367B56E2393F94340196086B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72A552C058805573821514B9 /* Project object */;
+}

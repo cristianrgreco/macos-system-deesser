@@ -1,6 +1,15 @@
 # Teams De-Esser for macOS Tahoe — Codex Implementation Specification
 
-**Document status:** implementation-ready specification  
+> ⚠️ **Superseded on scope.** This is the original v1 specification, written when
+> the app de-essed **only Microsoft Teams**. The shipped app was generalised to
+> de-ess **all system audio** (a global tap that excludes its own process) and was
+> renamed from `TeamsDeEsser` / `local.TeamsDeEsser` to **`DeEsser` / `local.DeEsser`**.
+> This document is kept because code comments reference its section numbers
+> ("spec §N") and its DSP / lifecycle / fail-open design still hold. Where it says
+> "Teams", read "all system audio except this app". For the current scope see
+> `CLAUDE.md` and `IMPLEMENTATION_NOTES.md` (§0), which are authoritative.
+
+**Document status:** implementation-ready specification (v1 scope; see banner above)  
 **Target:** macOS Tahoe 26.0 or later, Xcode 26.x, native Microsoft Teams client  
 **Primary bundle ID:** `com.microsoft.teams2`  
 **Working product name:** Teams De-Esser  
